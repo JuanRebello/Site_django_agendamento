@@ -1,0 +1,70 @@
+{% extends 'design/base.html' %}
+{% block conteudo %}
+{% load static %}
+<style>
+    /* Imagem fixa no centro com position: fixed */
+    .fixed-image {
+        position: relative;
+        top: 13%;  /* Ajuste para a posição vertical desejada */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;  /* Ajuste para a largura desejada */
+        height: 600px;
+        z-index: -1;  /* Fica atrás do conteúdo da página */
+        opacity: 0.7;
+    }
+
+    
+  </style>
+  
+<div class="container">
+    <img src="{% static 'imagem/foto.jpg' %}" alt="" class="fixed-image">
+    <h1 class="text-monospace" style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 5em; text-shadow: 2xp 2xp 4xp rgba(0, 0, 0, 0.5);">SEJA BEM VINDO!</h1>
+    <h2 class="text-monospace" style="position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 2em; text-shadow: 2xp 2xp 4xp rgba(0, 0, 0, 0.5); font-weight: lighter;">O Studio de Nail Design dos seus sonhos</h2>
+
+</div>
+
+<div>
+    <h1 class="text-left" style="padding: 50px 20px; font-weight: lighter; color: #f3ab46;">Conheça o</h1>
+    <h2 class="text-left d-block" style="padding: 1px 20px;font-weight: lighter; color: rgb(2, 2, 2); margin-top: -3%;">Érica Rebello Nail Designer</h2>
+</div>
+
+<div>
+    <h1 style="padding: 1px 20px; font-size: 1cap;">_____________________________________________________________________________</h1>
+</div>
+
+<div>
+  <div class="row align-items-center">
+    <!-- Coluna de texto -->
+    <div class="col-md-6">
+      <p class="text-left text-wrap" style="font-size: 1.3em; padding: 20px;">
+        O Érica Rebello Nail Designer, situado no Rio de Janeiro, foi fundado pela reconhecida nail designer Érica Rebello, que se destaca por seu domínio técnico e visão inovadora sobre as tendências do mercado. O estúdio é referência em cuidados com as unhas, oferecendo serviços como alongamento em fibra de vidro, esmaltação em gel, nail art, além de manicure e pedicure. Ampliando seu leque de opções, o espaço também disponibiliza tratamentos como SPA dos Pés com cuidados podológicos, SPA relaxante e esmaltação de longa duração. Além de atender seus clientes com excelência, o studio investe na formação de novos profissionais por meio de cursos presenciais, incluindo aulas de alongamento em fibra de vidro e esmaltação premium, voltados tanto para iniciantes quanto para especialistas que desejam aprimorar suas habilidades.
+      </p>
+    </div>
+
+    <!-- Coluna de imagens -->
+    <div class="col-md-6">
+      <div class="d-flex flex-wrap justify-content-center">
+        <img src="{% static 'imagem/unha1.png' %}" alt="Imagem 1" class="img-fluid m-2 img-thumbnail" style="max-width: 46%; height: auto;">
+        <img src="{% static 'imagem/unha2.png' %}" alt="Imagem 2" class="img-fluid m-2 img-thumbnail" style="max-width: 46%; height: auto;">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer style="background-color: #000; color: white; text-align: center; padding: 20px 0; position: relative; bottom: 0; width: 100%; z-index: 1000; font-size: 14px; height: 190px;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto;">
+      <h2 style="font-weight: lighter; color: #f3ab46;">FAÇA UM</h2>
+      <h1 style="font-weight: lighter;">AGENDAMENTO</h1>
+      <button type="button" class="btn btn-outline-dark" style="background-color: #d6963b;"><a href="{% url 'agendamento' %}" style="color: white;">AGENDAR HORÁRIO</a></button>
+  </div>
+</footer>
+
+
+
+
+
+{% endblock %}
+
+

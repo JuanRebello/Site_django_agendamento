@@ -1,0 +1,88 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    
+    <!-- JQuery completo -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Popper.js e Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>Érica Rebello</title>
+  </head>
+  <body style="overflow-x: hidden">
+    <!-- Navbar com responsividade -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light px-3" style="z-index: 2;">
+      <!-- Logo alinhada à esquerda -->
+      <a class="navbar-brand d-flex align-items-center" href="{% url 'inicio' %}">
+          <img src="{% static 'imagem/erica_logo_bege.png' %}" height="70" alt="Logo">
+      </a>  
+
+      <!-- Botão de alternância para dispositivos móveis -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links da navbar (serão ocultados em telas pequenas e transformados em um dropdown) -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link mx-4" href="{% url 'inicio' %}" style="color: black;">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-4" href="{% url 'espaco' %}" style="color: black;">O Espaço</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-4" href="{% url 'servicos' %}" style="color: black;">Serviços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-4" href="https://api.whatsapp.com/send/?phone=5521965119200&text&type=phone_number&app_absent=0" style="color: black;">Contato</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-4" href="{% url 'agendamento' %}" style="color: black;">Agendar Horário</a>
+          </li>
+
+          <!-- Área de login e logout (com comportamentos diferentes dependendo do estado de autenticação) -->
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <strong class="nav-link">Bem-Vindo {{user.get_username}}</strong>
+          </li>
+          <li class="nav-item">
+            <form action="{% url 'logout' %}">
+              {% csrf_token %}
+              <button class="btn bg-light text-primary" type="submit">Sair</button>
+            </form>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'novo_usuario' %}">Fazer cadastro</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{message.tags}}">{{message}}</div>
+        {% endfor %}
+    {% endif %}
+    {% block conteudo %}
+
+    {% endblock %}
+
+    <!-- Scripts do Bootstrap e jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  </body>
+</html>

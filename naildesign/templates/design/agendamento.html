@@ -1,0 +1,87 @@
+{% extends 'design/base.html' %}
+
+{% block conteudo %}
+
+<!-- Botão que abre o modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agendamentoModal">
+    Agendar Horário
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="agendamentoModal" tabindex="-1" role="dialog" aria-labelledby="agendamentoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="agendamentoModalLabel">Agendar Horário</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="formAgendamento" method="POST" action="{% url 'agendamento' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}  <!-- Renderiza os campos do formulário automaticamente -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-primary" id="submitButton">Agendar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tabela de agendamentos -->
+<h2>Agendamentos realizados</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Profissional</th>
+            <th>Serviço</th>
+            <th>Data e Hora</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for agendamento in agendamentos %}
+        <tr>
+            <td>{{ agendamento.profissional.nome }}</td>
+            <td>{{ agendamento.servico.nome }}</td>
+            <td>{{ agendamento.data_horario }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<script>
+    $(document).ready(function() {
+        // Submeter o formulário quando clicar em "Agendar"
+        $('#submitButton').on('click', function(event) {
+            event.preventDefault();  // Previne o comportamento padrão de submit do formulário
+            submitAgendamento();
+        });
+
+        function submitAgendamento() {
+            const form = $('#formAgendamento');
+            $.ajax({
+                url: "{% url 'agendamento' %}",  // Certifique-se que o URL esteja correto
+                method: 'POST',
+                data: form.serialize(),
+                success: function(response) {
+                    alert(response.message);
+                    if (response.success) {
+                        // Fechar o modal
+                        $('#agendamentoModal').modal('hide');
+                        
+                        // Redirecionar a página para atualizar a tabela de agendamentos
+                        window.location.reload();
+                    }
+                },
+                error: function() {
+                    alert('Ocorreu um erro ao tentar realizar o agendamento.');
+                }
+            });
+        }
+    });
+</script>
+
+{% endblock %}

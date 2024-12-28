@@ -1,0 +1,163 @@
+{% extends 'design/base.html' %}
+{% block conteudo %}
+{% load static %}
+
+<div class="container">
+    <h1 class="text-center" style="font-weight: lighter;">Nossos
+        <span style="color: #f3ab46; font-weight: bolder;">Serviços</span>
+    </h1>
+</div>
+<style>
+  .custom-card {
+    border: 2px solid #f3ab46; /* Cor dourada */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito ao passar o mouse */
+  }
+  
+  .custom-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
+  }
+  </style>
+  
+  <div class="row g-4">
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card custom-card container" style="width: 18em;">
+            <img src="{% static 'imagem/Colocação de alongamento.png' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Colocação de Alongamento</h5>
+              <p class="card-text">Técnica que alonga as unhas naturais, proporcionando unhas mais compridas e elegantes. Ideal para quem deseja maior durabilidade e estética.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="card custom-card container" style="width: 18em;">
+        <img src="{% static 'imagem/banho de gel.png' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Banho de Gel</h5>
+              <p class="card-text">Aplicação de gel sobre as unhas naturais para fortalecer, proteger e proporcionar brilho intenso, sem alongar.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card custom-card container" style="width: 18em;">
+            <img src="{% static 'imagem/blindagem.png' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Blindagem 15/dias</h5>
+              <p class="card-text">Camada protetora em gel que fortalece as unhas naturais, garantindo durabilidade e brilho por até 15 dias.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card custom-card container" style="width: 18em;">
+            <img src="{% static 'imagem/blindagem.png' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Blindagem 20/dias</h5>
+              <p class="card-text">Técnica similar à de 15 dias, porém com maior resistência, oferecendo unhas protegidas e bonitas por até 20 dias.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card custom-card container" style="width: 18em;">
+            <img src="{% static 'imagem/remoção.png' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Remoção de Alongamento</h5>
+              <p class="card-text">Procedimento para retirar o alongamento das unhas, preservando a saúde das unhas naturais.
+
+              </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card custom-card container" style="width: 18em;">
+            <img src="{% static 'imagem/quebrada.png' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Unha Quebrada</h5>
+              <p class="card-text">Reparação específica para unhas quebradas, devolvendo o comprimento e o aspecto natural.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card custom-card container" style="width: 18em;">
+            <img src="{% static 'imagem/decorada.png' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Decorada</h5>
+              <p class="card-text">Criação de designs personalizados nas unhas, como desenhos, pedras ou glitter, para um toque único e estiloso.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card custom-card container" style="width: 18em;">
+            <img src="{% static 'imagem/manutenção sem desenho.png' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Manuntenção sem desenho</h5>
+              <p class="card-text">Ajuste e reparo do alongamento ou gel, mantendo as unhas impecáveis, sem decoração adicional.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card custom-card container" style="width: 18em;">
+            <img src="{% static 'imagem/mão.png' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Manicure tradicional Mão</h5>
+              <p class="card-text">Cuidados básicos com as unhas das mãos, incluindo corte, lixamento, cutilagem e esmaltação.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card custom-card container" style="width: 18em;">
+            <img src="{% static 'imagem/pé.png' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Manicure tradicional Pé</h5>
+              <p class="card-text">Cuidados essenciais para as unhas dos pés, deixando-as bem tratadas e esmaltadas.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card custom-card container" style="width: 18em;">
+            <img src="{% static 'imagem/pé e mão.png' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Manicure tradicional Pé e Mão</h5>
+              <p class="card-text">Serviço completo que cuida tanto das unhas das mãos quanto dos pés, com esmaltação inclusa.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card custom-card container" style="width: 18em;">
+            <img src="{% static 'imagem/Esmaltação dos pés.png' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Esmaltação em Gel</h5>
+              <p class="card-text">Aplicação de esmalte em gel nos pés, garantindo maior durabilidade e um acabamento impecável.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card custom-card container" style="width: 18em;">
+            <img src="{% static 'imagem/spa relaxante.png' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Spa Relaxante</h5>
+              <p class="card-text">Tratamento para relaxar e revitalizar os pés, incluindo massagem, hidratação e cuidados especiais.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card custom-card container" style="width: 18em;">
+            <img src="{% static 'imagem/tratamento podal.png' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Tratamento Podal</h5>
+              <p class="card-text">Cuidados específicos para a saúde dos pés, como hidratação profunda, esfoliação e cuidados com calosidades.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer style="background-color: #000; color: white; text-align: center; padding: 20px 0; position: relative; bottom: 0; width: 100%; z-index: 1000; font-size: 14px; height: 190px;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="font-weight: lighter; color: #f3ab46;">FAÇA UM</h2>
+        <h1 style="font-weight: lighter;">AGENDAMENTO</h1>
+        <button type="button" class="btn btn-outline-dark" style="background-color: #d6963b;"><a href="{% url 'agendamento' %}" style="color: white;">AGENDAR HORÁRIO</a></button>
+    </div>
+  </footer>
+
+
+{% endblock %}
