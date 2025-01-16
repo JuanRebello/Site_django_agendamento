@@ -123,8 +123,11 @@ STATIC_URL = 'static/'
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 STATICFILES_DIRS = [
-    BASE_DIR / r"C:\Users\Juan Rebello\Desktop\Projetos Juan\erikanail\projeto_nail\Site_django_agendamento\naildesign\static",
+    BASE_DIR / 'naildesign/static',
 ]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 LOGIN_REDIRECT_URL = 'inicio'
 LOGIN_URL = 'login'
 # Default primary key field type
