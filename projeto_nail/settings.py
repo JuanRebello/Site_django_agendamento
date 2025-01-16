@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_$00&=es+*f#%x+v658jviq^w06ppj)c7_4l6^t+&cu5h7+3ds'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -123,11 +123,9 @@ STATIC_URL = '/static/'
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    BASE_DIR / 'naildesign/static',
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
 LOGIN_REDIRECT_URL = 'inicio'
 LOGIN_URL = 'login'
 # Default primary key field type
