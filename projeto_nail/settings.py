@@ -124,7 +124,7 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / r"C:\Users\Juan Rebello\Desktop\Projetos Juan\erikanail\projeto_nail\naildesign\static",
+    BASE_DIR / r"C:\Users\Juan Rebello\Desktop\Projetos Juan\erikanail\projeto_nail\Site_django_agendamento\naildesign\static",
 ]
 LOGIN_REDIRECT_URL = 'inicio'
 LOGIN_URL = 'login'
