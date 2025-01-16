@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_$00&=es+*f#%x+v658jviq^w06ppj)c7_4l6^t+&cu5h7+3ds'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -122,7 +122,6 @@ USE_TZ = True
 STATIC_URL = 'static/'
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
-STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / r"C:\Users\Juan Rebello\Desktop\Projetos Juan\erikanail\projeto_nail\Site_django_agendamento\naildesign\static",
 ]
